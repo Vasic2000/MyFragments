@@ -76,8 +76,10 @@ public class MainActivity extends AppCompatActivity {
             // Открыть транзакцию
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-            // Добавить фрагмент
-            fragmentTransaction.add(R.id.fragment_container, fragment);
+            List<Fragment> fragment5 = getSupportFragmentManager().getFragments();
+            if(!fragment5.contains(fragment))
+                // Добавить фрагмент
+                fragmentTransaction.add(R.id.fragment_container, fragment);
 
             // Добавить фрагмент в стек обратного вызова
             if (isBackstack.isChecked()) {
